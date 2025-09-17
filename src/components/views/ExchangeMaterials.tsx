@@ -38,7 +38,7 @@ interface ExchangePendingData {
     billStatus: string;
     billNo: string;
     qty: number;
-    leadTimeToLiftMaterial: string;
+    leadTimeToLiftMaterial: string | number;
     typeOfBill: string;
     billAmount: number;
     discountAmount: number;
@@ -55,14 +55,14 @@ interface ExchangePendingData {
     endDateWarrenty: string;
     billReceived: string;
     billNumber: string;
-    billAmount2: number;
+    billAmount2: string;
     billImage: string;
     damageOrder: string;
     quantityAsPerBill: number;
     priceAsPerPo: number;
     remark: string;
     status: string;
-    exchangeQty: number;
+    exchangeQty: string |  number;
     reason: string;
     billNumber2: string;
     planned10: string;
@@ -79,7 +79,7 @@ interface ExchangeHistoryData {
     billStatus: string;
     billNo: string;
     qty: number;
-    leadTimeToLiftMaterial: string;
+    leadTimeToLiftMaterial: string | number; 
     typeOfBill: string;
     billAmount: number;
     discountAmount: number;
@@ -96,19 +96,20 @@ interface ExchangeHistoryData {
     endDateWarrenty: string;
     billReceived: string;
     billNumber: string;
-    billAmount2: number;
+    billAmount2: string;
     billImage: string;
     damageOrder: string;
     quantityAsPerBill: number;
     priceAsPerPo: number;
     remark: string;
     status: string;
-    exchangeQty: number;
+    exchangeQty: string | number;
     reason: string;
     billNumber2: string;
     planned10: string;
     actual10: string;
 }
+
 
 const ExchangeMaterials = () => {
     const { storeInSheet, updateAll } = useSheets();
@@ -153,7 +154,7 @@ const ExchangeMaterials = () => {
                 endDateWarrenty: i.endDateWarrenty || '',
                 billReceived: i.billReceived || '',
                 billNumber: i.billNumber || '',
-                billAmount2: i.billAmount2 || 0,
+                billAmount2: i.billAmount2 || '',
                 billImage: i.billImage || '',
                 damageOrder: i.damageOrder || '',
                 quantityAsPerBill: i.quantityAsPerBill || 0,
@@ -202,7 +203,7 @@ useEffect(() => {
                 endDateWarrenty: i.endDateWarrenty || '',
                 billReceived: i.billReceived || '',
                 billNumber: i.billNumber || '',
-                billAmount2: i.billAmount2 || 0,
+                billAmount2: i.billAmount2 || '',
                 billImage: i.billImage || '',
                 damageOrder: i.damageOrder || '',
                 quantityAsPerBill: i.quantityAsPerBill || 0,
