@@ -297,6 +297,18 @@ export type StoreInSheet = {
     returnCopy: string;
 
 
+
+    planned10: string;
+    actual10: string;
+    timeDelay10: string;
+    warrenty:string;
+    billReceived:string;
+    billAmount2:string;
+    billImage:string;
+    exchangeQty:string;
+    billNumber2:string;
+
+
     poDate: string;
     poNumber: string;
     vendor: string;
